@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 
 const authMiddleware = async (req,res,next) => {
+    // console.log("JWT_SECRET from .env:", process.env.JWT_SECRET);
     const {token} = req.headers;
     if(!token){
         return res.json({success:false, message:"Not Authorized Login again"})

@@ -8,6 +8,10 @@ import { StoreContext } from '../../Context/StoreContext';
 const FoodItem = ({id, name, price, description, image}) => {
     const {cartItems, addToCart, removeFromCart, url} = useContext(StoreContext);
 
+    console.log("Cart Items:", cartItems);
+console.log("Item ID:", id);
+console.log("cartItems[id]:", cartItems ? cartItems[id] : "cartItems is undefined");
+
   return (
     <div className='food-item'>
         <div className="food-item-img-container">

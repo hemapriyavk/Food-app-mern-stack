@@ -39,6 +39,9 @@ const getCart = async (req,res) => {
     try {
         let userData = await userModel.findById(req.body.userId);
         let cartData = await userData.cartData;
+        if(!cartData){
+            return res.json({success: false, message: "Cart not found"});
+        }
         res.json({success:true, cartData});
     } catch (error) {
         console.log(error);
